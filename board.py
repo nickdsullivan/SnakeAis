@@ -41,12 +41,16 @@ class Board:
             result = result + "\n"
         return result
     def spawn_apple(self):
+
         empties = []
         for x in range(self.height):
             for y in range(self.width):
                 if self.board[x,y] == self.TILES["EMPTY"]:
                     empties.append((x,y))
+        if len(empties) == 0:
+            return 1
         self.set_square(random.choice(empties),self.TILES["APPLE"])
+        return 0 
 
 
 

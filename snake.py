@@ -17,7 +17,8 @@ class Snake:
         
         self.tail = current
 
-        
+    def __contains__(self, loc: tuple):
+        return loc in self.get_positions()
     def get_positions(self):
 
         results = []
